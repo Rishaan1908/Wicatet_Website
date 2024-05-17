@@ -1,15 +1,21 @@
 HOME - 
-    Google maps location - Gaurav
-    Gallery slideshow - Riri
-    Basic Description  - Parht 
+    Gallery slideshow 
+    Basic Description  
+    Products 
 ABOUT - 
+    Google maps location  
     Description of owners
     Hisotry
+Contact Page  - 
     Contact Info
-Contact Page  - anj
-
 FAQ
     
 Shopping cart + products page + login
     Comming soon
-Header/navbar - gaurav
+
+Header/navbar 
+
+Riri- Products page
+Parth- About page
+Anj - FAQ
+Gaurav - Deploying/CSS

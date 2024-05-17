@@ -1,7 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/logo.webp";
-import Map from "./Map"; 
+import Map from "./Map";
+import Gallery from "./Gallery"; // Import the Gallery component
+import CompanyDescription from "./CompanyDescription";
 
 function Home() {
   return (
@@ -11,12 +13,11 @@ function Home() {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
-                Wilcatet Farms
+                Wicatet Farms
               </h1>
 
               <h1 className="heading-name">
-              
-                <strong className="main-name"> Plant Nursery</strong>
+                <strong className="main-name">Plant Nursery</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -35,14 +36,27 @@ function Home() {
           </Row>
 
           <Row>
+              <Col>
+                <CompanyDescription/>
+              </Col>
+          </Row>
+
+          <Row>
             <Col md={12}>
-              <Map/> {/* Render the MapComponent here */}
+              <Map /> {/* Render the Map component here */}
+            </Col>
+          </Row>
+
+          <Row>
+            <Col md={12}>
+            <h1 style={{ textAlign: "center", fontSize: "3em", paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
+                Gallery
+              </h1>
+              <Gallery /> {/* Render the Gallery component here */}
             </Col>
           </Row>
         </Container>
       </Container>
-
-
     </section>
   );
 }
