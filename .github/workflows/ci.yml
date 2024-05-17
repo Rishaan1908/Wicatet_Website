@@ -24,4 +24,10 @@ jobs:
         run: npm install
         
       - name: Start application
-        run: npm start
+        run: |
+          npm start &
+          sleep 10 
+          curl -sSf http://localhost:3000 > /dev/null || exit 1 
+
+      - name: Stop application
+        run: npm stop
