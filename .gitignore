@@ -4,4 +4,4 @@ node_modules/
 # Ignore .cache directory
 .cache/
 
-.terraform/
+terraform/
