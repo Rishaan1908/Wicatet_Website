@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Great Vibes";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to bottom left, rgba(31, 69, 31, 0.582), rgba(12, 79, 24, 0.904));
+}
