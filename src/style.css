@@ -140,7 +140,10 @@ button:focus {
 .logo {
   height: 1.4em !important;
   width: 2.5em !important;
+  background-color: #004d0041; 
+  border-radius: 50%;
 }
+
 
 .navbar-nav .nav-link {
   color: white !important;
@@ -177,7 +180,7 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #c95bf5;
+  background: #39ff14;;
   bottom: 1px;
   left: 0;
   z-index: -1;
@@ -198,9 +201,11 @@ button:focus {
 
 .home-section {
   position: relative;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
+  background-image: var(--image-gradient), url(./Assets/bg.jpeg  );
+
   background-position: top center;
   background-repeat: no-repeat;
+  background-size: cover; 
   padding-bottom: 30px !important;
   padding-top: 30px !important;
 }
@@ -336,7 +341,7 @@ button:focus {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10, 4, 22);
+  background-color: rgb(18, 36, 18); 
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important ;

@@ -11,21 +11,7 @@ function Home() {
       <Container fluid className="home-section" id="home">
         <Container className="home-content">
           <Row>
-            <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
-                Wicatet Farms
-              </h1>
-
-              <h1 className="heading-name">
-                <strong className="main-name">Plant Nursery</strong>
-              </h1>
-
-              <div style={{ padding: 50, textAlign: "left" }}>
-                {/* Additional content */}
-              </div>
-            </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col md={12} className="text-center" style={{ paddingBottom: 30 }}>
               <img
                 src={homeLogo}
                 alt="home pic"
