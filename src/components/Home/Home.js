@@ -21,9 +21,9 @@ function Home() {
                 {/* Additional content */}
               </div>
             </Col>
-            <Col md={5} className="d-flex justify-content-center" style={{ paddingBottom: 20 }}>
+          </Row>
           <Row>
-            <Col md={12} className="text-center" style={{ paddingBottom: 30 }}
+            <Col md={12} className="text-center" style={{ paddingBottom: 30 }}>
               <img
                 src={homeLogo}
                 alt="home pic"
@@ -32,13 +32,11 @@ function Home() {
               />
             </Col>
           </Row>
-
           <Row className="my-5">
             <Col>
               <CompanyDescription />
             </Col>
           </Row>
-
           <Row className="my-5">
             <Col md={12}>
               <h1 style={{ textAlign: "center", fontSize: "3em", paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
