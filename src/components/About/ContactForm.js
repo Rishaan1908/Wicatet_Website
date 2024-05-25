@@ -21,8 +21,8 @@ const ContactForm = () => {
         e.preventDefault();
         console.log('Form Data:', formData);
         emailjs
-            .sendForm('service_b6hqa4m', 'service_b6hqa4m', e.target, {
-                publicKey: 'K1KF-g6C4j1O042wn',
+            .sendForm('', '', e.target, {
+                publicKey: '',
             })
             .then(
                 () => {
@@ -40,6 +40,7 @@ const ContactForm = () => {
             <Row className="justify-content-md-center">
                 <Col md={8}>
                     {/* <h2>Contact Us</h2> */}
+                    <br></br>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formName" className="mb-3">
                             {/* <Form.Label>Name</Form.Label> */}
