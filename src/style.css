@@ -376,7 +376,7 @@ button:focus {
   color: #a588c0 !important;
 }
 /* --------- */
-/* Projects */
+/* Products */
 /* --------- */
 .project-section {
   position: relative !important;
@@ -465,7 +465,7 @@ button:focus {
   outline: none !important;
   box-shadow: none !important;
 }
-.project-heading {
+.product-heading {
   color: white !important;
   font-size: 2.3em !important;
   font-weight: 500 !important;
