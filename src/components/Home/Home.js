@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/logo.webp";
 import Map from "./Map";
 import Gallery from "./Gallery"; // Import the Gallery component
+import CompanyDescription from "./CompanyDescription";
 
 function Home() {
   return (
@@ -32,6 +33,12 @@ function Home() {
                 style={{ maxHeight: "450px" }}
               />
             </Col>
+          </Row>
+
+          <Row>
+              <Col>
+                <CompanyDescription/>
+              </Col>
           </Row>
 
           <Row>
