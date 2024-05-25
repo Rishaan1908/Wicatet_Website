@@ -18,13 +18,8 @@
 # Header/navbar
 
 ## Team Responsibilities
-- **Riri**: Products page
-- **Parth**: About page
-- **Anj**: FAQ
-- **Gaurav**: Deploying/CSS
+- **Riri**: Products page, SQL user accounts
+- **Parth**: CSS
+- **Anj**: Login page
+- **Gaurav**: Deploying/CSS, Backend, 
 
-
-Design shopping cart page 
-Get feedback
-Design login page 
-- **Gaurav**: CD, Design db schema
