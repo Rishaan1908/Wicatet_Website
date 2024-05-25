@@ -22,3 +22,9 @@
 - **Parth**: About page
 - **Anj**: FAQ
 - **Gaurav**: Deploying/CSS
+
+
+Design shopping cart page 
+Get feedback
+Design login page 
+- **Gaurav**: CD, Design db schema
