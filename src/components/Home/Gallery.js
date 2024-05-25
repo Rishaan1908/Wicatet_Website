@@ -32,7 +32,7 @@ function DisplayGallery() {
             <img
               src={require(`./images/image${index + 1}.jpeg`)}
               className="img-fluid"
-              style={{ width: "60%%", height: "80%" }}
+              style={{ width: "100%", height: "auto" }}
             />
           </Col>
         ))}

@@ -1,7 +1,7 @@
 HOME - 
     Google maps location - Gaurav
     Gallery slideshow - Riri
-    Basic Description  - Parht 
+    Basic Description  - Parth 
 ABOUT - 
     Description of owners
     Hisotry

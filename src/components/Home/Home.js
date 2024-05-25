@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/logo.webp";
-import Map from "./Map";
-import Gallery from "./Gallery"; // Import the Gallery component
+import Gallery from "./Gallery";
 import CompanyDescription from "./CompanyDescription";
 
 function Home() {
@@ -10,22 +9,19 @@ function Home() {
     <section>
       <Container fluid className="home-section" id="home">
         <Container className="home-content">
-          <Row>
+          <Row className="align-items-center">
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
                 Wicatet Farms
               </h1>
-
               <h1 className="heading-name">
                 <strong className="main-name">Plant Nursery</strong>
               </h1>
-
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div style={{ padding: '50px 0', textAlign: "left" }}>
                 {/* Additional content */}
               </div>
             </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col md={5} className="d-flex justify-content-center" style={{ paddingBottom: 20 }}>
               <img
                 src={homeLogo}
                 alt="home pic"
@@ -35,21 +31,15 @@ function Home() {
             </Col>
           </Row>
 
-          <Row>
-              <Col>
-                <CompanyDescription/>
-              </Col>
-          </Row>
-
-          <Row>
-            <Col md={12}>
-              <Map /> {/* Render the Map component here */}
+          <Row className="my-5">
+            <Col>
+              <CompanyDescription />
             </Col>
           </Row>
 
-          <Row>
+          <Row className="my-5">
             <Col md={12}>
-            <h1 style={{ textAlign: "center", fontSize: "3em", paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
+              <h1 style={{ textAlign: "center", fontSize: "3em", paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
                 Gallery
               </h1>
               <Gallery /> {/* Render the Gallery component here */}
