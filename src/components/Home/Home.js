@@ -22,6 +22,8 @@ function Home() {
               </div>
             </Col>
             <Col md={5} className="d-flex justify-content-center" style={{ paddingBottom: 20 }}>
+          <Row>
+            <Col md={12} className="text-center" style={{ paddingBottom: 30 }}
               <img
                 src={homeLogo}
                 alt="home pic"
