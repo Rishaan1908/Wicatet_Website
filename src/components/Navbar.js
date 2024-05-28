@@ -16,7 +16,7 @@ import {
 import { CgFileDocument } from "react-icons/cg";
 import { FaSeedling } from "react-icons/fa";
 
-function NavBar() {
+function NavigationBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
@@ -52,7 +52,7 @@ function NavBar() {
           <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+          <Nav className="ms-auto">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
@@ -72,17 +72,6 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/product"
-                onClick={() => updateExpanded(false)}
-              >
-                <FaSeedling style={{ marginBottom: "2px" }} />{" "}
-                Products
-              </Nav.Link>
-
-          </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
                 to="/faq"
                 onClick={() => updateExpanded(false)}
               >
@@ -90,36 +79,25 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            {/* <Nav.Item>
+            <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/resume"
+                to="/product"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <FaSeedling style={{ marginBottom: "2px" }} /> Products
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>
-            </Nav.Item> */}
-
-            {/* <Nav.Item className="fork-btn">
+            <Nav.Item className="fork-btn" key="fork-btn">
               <Button
                 href="https://github.com/soumyajit4419/Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
               >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
+                <CgGitFork style={{ fontSize: "1.2em" }} />
               </Button>
-            </Nav.Item> */}
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -127,4 +105,5 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavigationBar;
+
