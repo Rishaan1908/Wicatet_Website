@@ -6,9 +6,7 @@ import logo from "../Assets/full_logo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
-import { AiFillStar, AiOutlineHome, AiOutlineUser } from "react-icons/ai";
-import { CgFileDocument } from "react-icons/cg";
+import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { FaSeedling } from "react-icons/fa";
 
 function NavigationBar() {
