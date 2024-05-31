@@ -55,11 +55,23 @@ button:focus {
   border-radius: 12px;
 } */
 
+.image-wrapper {
+  width: 100%;
+  height: 200px; /* Set the desired height for all images */
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
 /* --------- */
 /* Navbar Section  */
 /* --------- */
 .sticky {
-  background-color: #1b1a2ea9 !important;
+  background-color: #1b1a2e !important;
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
@@ -67,7 +79,7 @@ button:focus {
 
 .navbar {
   position: fixed !important;
-  background-color: #1b1a2ea9 !important;
+  background-color: #1b1a2e !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
@@ -215,6 +227,10 @@ button:focus {
   padding: 9rem 0 2rem !important;
   color: whitesmoke;
   text-align: left;
+}
+
+.home-background {
+  background-color: #0c650fb5;
 }
 
 .heading {

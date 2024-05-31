@@ -7,8 +7,8 @@ import CompanyDescription from "./CompanyDescription";
 function Home() {
   return (
     <section>
-      <Container fluid className="home-section" id="home">
-        <Container className="home-content">
+      <Container fluid className="home-background" id="home">
+        <Container className="home-content home-section">
           <Row>
             <Col md={12} className="text-center">
               <img
@@ -27,9 +27,9 @@ function Home() {
           <Row className="my-5">
             <Col md={12}>
               <h1 style={{ textAlign: "center", fontSize: "3em", paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
-                Gallery
+                  Gallery of Plants
               </h1>
-              <Gallery /> {/* Render the Gallery component here */}
+              <Gallery />
             </Col>
           </Row>
         </Container>
