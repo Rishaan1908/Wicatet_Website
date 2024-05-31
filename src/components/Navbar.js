@@ -65,7 +65,7 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                About
               </Nav.Link>
             </Nav.Item>
 
@@ -78,15 +78,36 @@ function NavBar() {
                 <FaSeedling style={{ marginBottom: "2px" }} />{" "}
                 Products
               </Nav.Link>
+            </Nav.Item>
 
-          </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/contact"
+                onClick={() => updateExpanded(false)}
+              >
+                Contact Us
+              </Nav.Link>
+            </Nav.Item>
+
             <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/faq"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> FAQ
+                {/* <AiOutlineUser style={{ marginBottom: "2px" }} /> FAQ */}
+                FAQ
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/login"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> Account
               </Nav.Link>
             </Nav.Item>
 

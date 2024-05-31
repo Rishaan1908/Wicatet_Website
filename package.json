@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@react-google-maps/api": "^2.19.3",
     "@react-pdf/renderer": "^2.2.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -26,6 +29,7 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-tsparticles": "^1.42.2",
+    "styled-components": "^6.1.11",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.4"
   },
