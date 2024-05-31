@@ -6,7 +6,6 @@ import About from "./components/About/About";
 import Faq from "./components/Faq/Faq"
 import Products from "./components/Products/Products";
 import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
 import {
   BrowserRouter as Router,
   Route,
