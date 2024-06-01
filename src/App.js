@@ -3,8 +3,9 @@ import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
-import Faq from "./components/Faq/Faq"
+import Faq from "./components/Faq/Faq";
 import Products from "./components/Products/Products";
+import ProductDetail from "./components/Products/ProductDetail";
 import Footer from "./components/Footer";
 import {
   BrowserRouter as Router,
@@ -16,12 +17,13 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, updateLoad] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      updateLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
@@ -36,10 +38,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/resume" element={<Resume />} /> */}
           <Route path="/faq" element={<Faq />} />
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </div>
