@@ -10,7 +10,7 @@ function ProductDetail() {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px" }} className="home-about-description">
       <h1>{product.name}</h1>
       <img
         src={require(`./ProductImages/image${product.id}.jpeg`)}

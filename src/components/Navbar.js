@@ -59,7 +59,7 @@ function NavigationBar() {
               <Nav.Link
                 as={Link}
                 to="/about"
-                onClick={() => updateExpanded(false)}
+                onClick={() => setExpand(false)}
               >
                 About
               </Nav.Link>
@@ -69,7 +69,7 @@ function NavigationBar() {
               <Nav.Link
                 as={Link}
                 to="/product"
-                onClick={() => updateExpanded(false)}
+                onClick={() => setExpand(false)}
               >
                 <FaSeedling style={{ marginBottom: "2px" }} />{" "}
                 Products
@@ -80,7 +80,7 @@ function NavigationBar() {
               <Nav.Link
                 as={Link}
                 to="/contact"
-                onClick={() => updateExpanded(false)}
+                onClick={() => setExpand(false)}
               >
                 Contact Us
               </Nav.Link>
@@ -90,7 +90,7 @@ function NavigationBar() {
               <Nav.Link
                 as={Link}
                 to="/faq"
-                onClick={() => updateExpanded(false)}
+                onClick={() => setExpand(false)}
               >
                 {/* <AiOutlineUser style={{ marginBottom: "2px" }} /> FAQ */}
                 FAQ
@@ -101,17 +101,13 @@ function NavigationBar() {
               <Nav.Link
                 as={Link}
                 to="/login"
-                onClick={() => updateExpanded(false)}
+                onClick={() => setExpand(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> Account
 
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
-              <Nav.Link as={Link} to="/product" onClick={() => setExpand(false)}>
-                <FaSeedling style={{ marginBottom: "2px" }} /> Products
-              </Nav.Link>
-            </Nav.Item>
+            
             <Nav.Item className="fork-btn" key="fork-btn">
               <Button
                 href="https://github.com/soumyajit4419/Portfolio"
