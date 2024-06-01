@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import ContactForm from "./components/ContactUs/ContactForm";
 import Faq from "./components/Faq/Faq"
 import Products from "./components/Products/Products";
+import ProductDetail from "./components/Products/ProductDetail";
 import Footer from "./components/Footer";
 import {
   BrowserRouter as Router,
@@ -20,11 +21,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, updateLoad] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      updateLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
@@ -40,6 +41,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product" element={<Products />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/about" element={<About />} />
             {/* <Route path="/contact" element={<ContactForm />} /> */}
             <Route path="/contact" element={
