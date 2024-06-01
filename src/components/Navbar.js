@@ -56,13 +56,55 @@ function NavigationBar() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as={Link} to="/about" onClick={() => setExpand(false)}>
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              <Nav.Link
+                as={Link}
+                to="/about"
+                onClick={() => updateExpanded(false)}
+              >
+                About
               </Nav.Link>
             </Nav.Item>
+
             <Nav.Item>
-              <Nav.Link as={Link} to="/faq" onClick={() => setExpand(false)}>
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> FAQ
+              <Nav.Link
+                as={Link}
+                to="/product"
+                onClick={() => updateExpanded(false)}
+              >
+                <FaSeedling style={{ marginBottom: "2px" }} />{" "}
+                Products
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/contact"
+                onClick={() => updateExpanded(false)}
+              >
+                Contact Us
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/faq"
+                onClick={() => updateExpanded(false)}
+              >
+                {/* <AiOutlineUser style={{ marginBottom: "2px" }} /> FAQ */}
+                FAQ
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/login"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> Account
+
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
