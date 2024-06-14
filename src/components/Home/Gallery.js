@@ -34,7 +34,7 @@ function DisplayGallery() {
           <Col key={index} md={4} className="mb-4">
             <div style={{ width: "100%", height: "500px", overflow: "hidden" }}>
             <img
-              src={require(`./images/image${index + 1}.jpeg`)}
+              src={require(`../Products/ProductImages/image${index + 1}.jpeg`)}
               alt={`Number ${index + 1}`}
               className="img-fluid"
               style={{ width: "100%", height: "auto" }}
