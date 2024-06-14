@@ -11,7 +11,7 @@ function DisplayGallery() {
     setImages(initialImages);
   }, []); 
   return (
-    <Carousel interval={2000}>
+    <Carousel interval={2000} pause = {false}>
   {images.map((index) => (
     <Carousel.Item key={index}>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
