@@ -22,9 +22,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        
-      - name: Start application
-        run: |
-          npm start &
-          sleep 10 
-          curl -sSf http://localhost:3000 > /dev/null || exit 1 
+
+     - name: Build the project
+      run: npm run build 

@@ -17,7 +17,17 @@
 - Coming soon
 
 ## Header/navbar
-- Riri: SQL
-- Parth: About page, Products page 
-- Anj: User auth 
-- Gaurav: Putting sql DB on cloud 
+- Riri: css resizing 
+- Parth: About page, Products page, shopping cart UI
+- Anj: backend 
+- Gaurav: domain routing, db
+
+
+Backlog
+- optimize css to handle resizing
+- create a sql db to hold products and user info
+- develop a backend to retreive data from sql
+- give functionality to contact us page
+- create a checkout page
+- put all this on AWS lightsail
+- write the meta tags
