@@ -25,6 +25,7 @@
 ---
 
 ### DB Schema
+```
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) NOT NULL,
@@ -46,6 +47,7 @@ CREATE TABLE user_products (
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+```
 
 
 ---
