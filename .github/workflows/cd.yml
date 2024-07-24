@@ -1,4 +1,4 @@
-name: CD 
+name: CD
 
 on:
   push:
@@ -6,21 +6,30 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.5.3
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        ssh-private-key: ${{ secrets.LIGHTSAIL_SSH_PRIVATE_KEY }}
+        node-version: '20'
 
-    - name: SSH and deploy
-      run: |
-        ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.LIGHTSAIL_HOST }} << 'EOF'
-          cd /home/ubuntu/Wicatet_Website 
-          git pull origin main
-        EOF
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the project
+      run: npm run build
+
+    - name: Sync S3 Bucket
+      uses: jakejarvis/s3-sync-action@v0.5.1
+      with:
+        args: --acl public-read --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SOURCE_DIR: 'build'
