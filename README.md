@@ -47,7 +47,6 @@ CREATE TABLE user_products (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
-
 ---
 
 ### API Endpoints
