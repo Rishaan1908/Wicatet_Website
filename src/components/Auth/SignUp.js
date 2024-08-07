@@ -1,6 +1,7 @@
-// src/Signup.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { addUser, findUser } from '../DataBase';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -39,10 +40,11 @@ const Button = styled.button`
   }
 `;
 
-const Signup = ({ onSwitch }) => {
+const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,8 +52,13 @@ const Signup = ({ onSwitch }) => {
       alert('Passwords do not match');
       return;
     }
-    console.log('Email:', email);
-    console.log('Password:', password);
+    if (findUser(email)) {
+      alert('User already exists');
+      return;
+    }
+    addUser({ email, password, wishlist: [] });
+    alert('Account created successfully. Please log in.');
+    navigate('/login');
   };
 
   return (
@@ -63,18 +70,21 @@ const Signup = ({ onSwitch }) => {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <Input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
         <Input
           type="password"
           placeholder="Confirm Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
+          required
         />
         <Button type="submit">Sign Up</Button>
         <p>

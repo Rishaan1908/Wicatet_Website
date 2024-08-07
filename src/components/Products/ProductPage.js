@@ -1,39 +1,29 @@
-import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import React, { useContext } from "react";
+import { WishlistContext } from "./WishlistContext";
 
-function ProductPage({ products }) {
-  const { id } = useParams();
-  const product = products.find(p => p.id === parseInt(id));
+const ProductPage = ({ product }) => {
+  const { addToCart } = useContext(WishlistContext);
+  const [quantity, setQuantity] = useState(1);
 
-  if (!product) {
-    return <h2>Product not found</h2>;
-  }
-
-  const index = products.findIndex(p => p.id === product.id);
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+  };
 
   return (
-    <Container>
-      <Row>
-        <Col md={6}>
-          <img
-            src={require(`./ProductImages/image${index + 1}.jpeg`)}
-            alt={product.name}
-            className="img-fluid"
-            style={{ width: "60%", height: "80%" }}
-          />
-        </Col>
-        <Col md={6}>
-          <h1>{product.name}</h1>
-          <p>{product.description}</p>
-          <h3>${product.price}</h3>
-          <p>Quantity: {product.quantity}</p>
-          <p>Review: {product.review} stars</p>
-          <Button variant="primary">Add to Cart</Button>
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      <h1>{product.name}</h1>
+      <p>{product.description}</p>
+      <p>Price: ${product.price}</p>
+      <input
+        type="number"
+        value={quantity}
+        onChange={(e) => setQuantity(e.target.value)}
+        min="1"
+        max={product.quantity}
+      />
+      <button onClick={handleAddToCart}>Add to Cart</button>
+    </div>
   );
-}
+};
 
 export default ProductPage;

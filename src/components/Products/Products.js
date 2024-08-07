@@ -22,10 +22,7 @@ function Products() {
                 id={product.id}
                 index={index}
                 name={product.name}
-                description={product.description}
                 price={product.price}
-                quantity={product.quantity}
-                review={product.review}
               />
             </Col>
           ))}

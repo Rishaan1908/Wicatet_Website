@@ -1,76 +1,58 @@
-// src/Login.js
-import React, { useState } from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-`;
-
-const Input = styled.input`
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-`;
-
-const Button = styled.button`
-  padding: 0.5rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { findUser, setCurrentUser } from '../DataBase';
+import { WishlistContext } from '../Products/WishlistContext';
 
 const Login = () => {
+  const { user, setUser, setWishlist } = useContext(WishlistContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+    const foundUser = findUser(email);
+
+    if (foundUser && foundUser.password === password) {
+      setCurrentUser(foundUser);
+      setUser(foundUser);
+      setWishlist(foundUser.wishlist);
+      navigate('/account');
+    } else {
+      setError('Invalid email or password');
+    }
   };
 
+  if (user) {
+    navigate('/account');
+    return null;
+  }
+
   return (
-    <Container>
-      <Form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <Input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button type="submit">Login</Button>
-        <p>
-          Don't have an account? <a href="/signup" style={{ color: '#007bff' }}>Sign Up</a>
-        </p>
-      </Form>
-    </Container>
+    <div>
+      <h2>Login</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 };
 
