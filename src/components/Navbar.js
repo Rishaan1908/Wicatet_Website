@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/full_logo.png";
+import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
@@ -15,109 +15,46 @@ function NavigationBar() {
 
   useEffect(() => {
     function handleScroll() {
-      if (window.scrollY >= 20) {
-        setNavColour(true);
-      } else {
-        setNavColour(false);
-      }
+      setNavColour(window.scrollY >= 20);
     }
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = [
+    { to: "/", icon: <AiOutlineHome />, label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/product", icon: <FaSeedling />, label: "Products" },
+    { to: "/contact", label: "Contact Us" },
+    { to: "/faq", label: "FAQs" },
+    { to: "/login", icon: <AiOutlineUser />, label: "" },
+  ];
+
   return (
-    <Navbar
-      expanded={expand}
-      fixed="top"
-      expand="md"
-      className={navColour ? "sticky" : "navbar"}
-    >
-      <Container>
-        <Navbar.Brand href="/" className="d-flex align-items-center">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-          <span className="ms-4">Wicatet Farms Plant Nursery</span>
+    <Navbar expanded={expand} fixed="top" expand="md" className={navColour ? "sticky" : "navbar"}>
+      <Container className="d-flex flex-column align-items-center">
+        <Navbar.Brand href="/" className="d-flex flex-column align-items-center">
+          <img src={logo} className="img-fluid logo" alt="brand logo" />
         </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={() => setExpand(expand ? false : "expanded")}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setExpand(!expand)} />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => setExpand(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => setExpand(false)}
-              >
-                About
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/product"
-                onClick={() => setExpand(false)}
-              >
-                <FaSeedling style={{ marginBottom: "2px" }} />{" "}
-                Products
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/contact"
-                onClick={() => setExpand(false)}
-              >
-                Contact Us
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/faq"
-                onClick={() => setExpand(false)}
-              >
-                {/* <AiOutlineUser style={{ marginBottom: "2px" }} /> FAQ */}
-                FAQ
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/login"
-                onClick={() => setExpand(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> Account
-
-              </Nav.Link>
-            </Nav.Item>
-            
-            <Nav.Item className="fork-btn" key="fork-btn">
-              <Button
-                href="" //add shopping cart
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />
-              </Button>
-            </Nav.Item>
-          </Nav>
+          <div className="navbar-items-container">
+            <Nav className="navbar-items">
+              {navItems.map(({ to, icon, label }, index) => (
+                <Nav.Item key={index}>
+                  <Nav.Link as={Link} to={to} onClick={() => setExpand(false)}>
+                    {icon && <span style={{ marginBottom: "2px" }}>{icon}</span>} {label}
+                  </Nav.Link>
+                </Nav.Item>
+              ))}
+              <Nav.Item className="fork-btn">
+                <Button href="#" target="_blank" className="fork-btn-inner">
+                  <CgGitFork style={{ fontSize: "1.2em" }} />
+                </Button>
+              </Nav.Item>
+            </Nav>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
