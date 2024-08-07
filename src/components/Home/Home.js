@@ -9,16 +9,8 @@ function Home() {
     <section>
       <Container fluid className="home-background" id="home">
         <Container className="home-content home-section">
-          <Row>
-            <Col md={12} className="text-center">
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "300px" }}
-              />
-            </Col>
-          </Row>
+          <p></p>
+
           <Row className="my-5">
             <Col>
               <CompanyDescription />
@@ -27,7 +19,7 @@ function Home() {
           <Row className="my-5">
             <Col md={12}>
               <h1 style={{ textAlign: "center", fontSize: "3em", paddingBottom: 15, fontFamily: 'cursive' }} className="heading">
-                  Gallery of Plants
+                  Our Plant Family
               </h1>
               <Gallery />
             </Col>

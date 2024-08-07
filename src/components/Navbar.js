@@ -6,6 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/full_logo.png";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import { CgGitFork } from "react-icons/cg";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { FaSeedling } from "react-icons/fa";
 import { WishlistContext } from "../components/Products/WishlistContext";

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.section`
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
@@ -16,7 +16,7 @@ const Title = styled.h2`
   color: #333;
 `;
 
-const QuestionContainer = styled.div`
+const QuestionContainer = styled.article`
   margin-bottom: 1rem;
   background: white;
   padding: 1rem;
@@ -31,6 +31,7 @@ const Question = styled.div`
   align-items: center;
   color: #007bff;
   font-weight: bold;
+  transition: max-height 0.3s ease, padding-top 0.3s ease;
 `;
 
 const Answer = styled.div`
@@ -38,13 +39,16 @@ const Answer = styled.div`
   padding-left: 1rem;
   color: #555;
   border-left: 2px solid #007bff;
-  display: ${props => (props.isOpen ? 'block' : 'none')};
-`;
+  max-height: ${props => (props.isOpen ? '1000px' : '0')};
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding-top 0.4s ease;
+  padding-top: ${props => (props.isOpen ? '0.3rem' : '0')};
+  `;
 
 const Icon = styled.span`
   font-size: 1.5rem;
   transform: ${props => (props.isOpen ? 'rotate(45deg)' : 'rotate(0)')};
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease-out;
 `;
 
 const FAQ = () => {
@@ -60,22 +64,22 @@ const FAQ = () => {
       answer: 'Our return policy allows you to return products within 30 days of purchase. The product must be in its original condition.'
     },
     {
-      question: 'How do I track my order?',
-      answer: 'You can track your order by logging into your account and clicking on the "Track Order" link in the Orders section.'
+      question: 'How do I know when to water my plants?',
+      answer: 'Dig down 1-2 inches underneath the mulch and feel the soil. If the soil is wet, you don\'t need to water.'
     },
     {
-      question: 'Do you offer international shipping?',
-      answer: 'Yes, we offer international shipping to most countries. Shipping fees and delivery times vary depending on the destination.'
+      question: 'How do we buy the products?',
+      answer: 'Simply add them to your wishlist then give us a call!'
     }
   ];
 
   return (
     <Container>
       <Title>Frequently Asked Questions</Title>
-      <br></br>
+      <br />
       {faqs.map((faq, index) => (
         <QuestionContainer key={index}>
-          <Question onClick={() => toggleAnswer(index)}>
+          <Question onClick={() => toggleAnswer(index)} aria-expanded={openIndex === index}>
             {faq.question}
             <Icon isOpen={openIndex === index}>+</Icon>
           </Question>
