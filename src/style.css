@@ -612,3 +612,81 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+.wishlist-section {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+}
+
+.wishlist-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.purple {
+  color: #6c63ff;
+}
+
+.empty-message {
+  color: #333;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.wishlist-grid {
+  justify-content: center;
+}
+
+.wishlist-card-col {
+  margin-bottom: 20px;
+}
+
+.wishlist-card {
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.wishlist-card:hover {
+  transform: translateY(-5px);
+}
+
+.wishlist-card-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.wishlist-card-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.wishlist-card-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.wishlist-quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.wishlist-quantity-input {
+  width: 60px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.wishlist-remove-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.clear-wishlist-btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+

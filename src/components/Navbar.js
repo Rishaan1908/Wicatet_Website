@@ -88,6 +88,12 @@ function NavigationBar() {
                 FAQ
               </Nav.Link>
             </Nav.Item>
+            
+            <Nav.Item>
+              <Nav.Link as={Link} to="/wishlist" onClick={() => setExpand(false)}>
+                Wishlist
+              </Nav.Link>
+            </Nav.Item>
 
             {user ? (
               <>
@@ -117,11 +123,6 @@ function NavigationBar() {
               </>
             )}
 
-            <Nav.Item>
-              <Nav.Link as={Link} to="/wishlist" onClick={() => setExpand(false)}>
-                Wishlist
-              </Nav.Link>
-            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
