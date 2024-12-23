@@ -1,0 +1,84 @@
+.about-section {
+  background-color: #f4f4f9; /* Light background */
+  padding: 60px 0;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-name {
+  font-size: 3rem;
+  color: #2a9d8f; /* Accent color */
+  letter-spacing: 1px;
+}
+
+h2 {
+  color: #264653; /* Heading color */
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #6c757d; /* Soft gray text */
+}
+
+.about-left, .about-right, .image-row {
+  margin: 0; /* Ensure no extra margins on rows/columns */
+  padding: 0; /* Remove padding */
+}
+
+/* Remove uniform-padding class for images */
+.uniform-padding {
+  padding: 0; /* Ensure no padding */
+}
+
+/* Full-width and height images */
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image covers the entire container */
+  border-radius: 0; /* Remove border-radius if applied */
+  box-shadow: none; /* Remove shadow if present */
+}
+
+/* Card Styling */
+.card-body {
+  background-color: #fff;
+  padding: 30px;
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+/* Hover effect */
+.card-body:hover {
+  background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .about-row {
+      flex-direction: column;
+  }
+
+  img {
+      max-height: 200px;
+  }
+
+  .uniform-padding {
+      padding: 0; /* Remove padding for mobile view */
+  }
+}
+
+/* Ensure the map container fits the column */
+.d-flex.justify-content-center {
+  width: 100%;
+}
+
+/* Optional: Adjust the height of the map to ensure it fits well */
+#map {
+  height: 300px; /* Adjust this value as needed */
+}

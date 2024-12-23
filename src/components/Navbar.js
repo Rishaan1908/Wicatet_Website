@@ -96,26 +96,14 @@ function NavigationBar() {
                 FAQ
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/login"
+                to="/wishlist"
                 onClick={() => setExpand(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> Account
-
+                Wishlist
               </Nav.Link>
-            </Nav.Item>
-            
-            <Nav.Item className="fork-btn" key="fork-btn">
-              <Button
-                href="" //add shopping cart
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />
-              </Button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
