@@ -10,7 +10,7 @@ function Footer() {
       <Row>
         <Col md="4" className="footer-copyright">
           <h3>
-            Designed and Developed by{" "}
+            Developed by{" "}
             <a href="https://www.linkedin.com/in/parthkapila/" target="_blank" rel="noopener noreferrer">
               Parth Kapila
             </a>
