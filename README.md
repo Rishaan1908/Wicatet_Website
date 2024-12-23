@@ -11,10 +11,14 @@
 
 #### Front end
 - Fix home page
+- Fix Nav Bar Icons
+- Fix Product Cards
 - Mobile compatibility
 
 #### Back end
-- Fill db with products 
+- Fill db with products
+- Contact US functionality
+- Wishlist
 
 #### Infastructure
 - SSL certificate
