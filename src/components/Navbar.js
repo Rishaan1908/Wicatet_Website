@@ -3,10 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/full_logo.png";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineHome} from "react-icons/ai";
 import { FaSeedling } from "react-icons/fa";
 
 function NavigationBar() {
@@ -96,26 +94,14 @@ function NavigationBar() {
                 FAQ
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/login"
+                to="/wishlist"
                 onClick={() => setExpand(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> Account
-
+                Wishlist
               </Nav.Link>
-            </Nav.Item>
-            
-            <Nav.Item className="fork-btn" key="fork-btn">
-              <Button
-                href="" //add shopping cart
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />
-              </Button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
