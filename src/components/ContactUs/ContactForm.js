@@ -29,15 +29,15 @@ const ContactUs = () => {
       <div className="contact-info">
         <div className="info-item">
           <FontAwesomeIcon icon={faEnvelope} />
-          <span>info@yourcompany.com</span>
+          <span>Wicatetfarms@gmail.com</span>
         </div>
         <div className="info-item">
           <FontAwesomeIcon icon={faPhone} />
-          <span>+1 (123) 456-7890</span>
+          <span>+1 (352) 973-2244</span>
         </div>
         <div className="info-item">
           <FontAwesomeIcon icon={faMapMarkerAlt} />
-          <span>123 Main St, Anytown, USA</span>
+          <span>24701 Ward Way, Eustis, FL 32736</span>
         </div>
       </div>
 
