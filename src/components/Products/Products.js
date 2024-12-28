@@ -20,7 +20,7 @@ function Products() {
     if (size === 7) {
       return products; // Show all products when "All" is selected
     }
-    return products.filter(product => product.sizes.includes(size));
+    return products.filter(product => product.size.includes(size));
   };
 
   // Toggle the sort order between Low to High and High to Low
@@ -82,7 +82,7 @@ function Products() {
                 price={product.price}
                 quantity={product.quantity}
                 review={product.review}
-                size={product.sizes.join(", ")} // Display all available sizes
+                size={product.size.join(", ")} // Display all available sizes
               />
             </Col>
           ))}
