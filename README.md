@@ -10,17 +10,11 @@
 ### Backlog
 
 #### Front end
-- Fix home page (css make it look better)
-- Fix Nav Bar Icons (remove them or add new)
-- Fix Product Cards (show title regardless)
-- Wishlist make it look better
 - Mobile compatibility
 - Change product slider to a dropdown
 
 #### Back end
-- Fill db with products
-- Parser
-- Contact US functionality
+
 
 #### Infastructure
-- write the meta tags
+
