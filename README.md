@@ -11,7 +11,7 @@
 
 #### Front end
 - Mobile compatibility
-
+- Allow for wishlist to be sent through email
+- Update faq's
 #### Back end
-
-#### Infastructure
+- Send wishlist to wicate email
