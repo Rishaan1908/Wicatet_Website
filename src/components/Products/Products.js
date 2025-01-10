@@ -20,7 +20,7 @@ function Products() {
     if (size === 7) {
       return products; // Show all products when "All" is selected
     }
-    return products.filter(product => product.size.includes(size));
+    return products.filter((product) => product.size.includes(size));
   };
 
   // Toggle the sort order between Low to High and High to Low
@@ -28,7 +28,7 @@ function Products() {
     setIsLowToHigh(!isLowToHigh);
   };
 
-  // Handle size slider change
+  // Handle size dropdown change
   const handleSizeChange = (event) => {
     setSize(Number(event.target.value));
   };
@@ -46,29 +46,37 @@ function Products() {
         </h1>
 
         {/* Sorting Button */}
-        <Button variant="primary" onClick={toggleSortOrder} style={{ marginBottom: "10px" }}>
+        <Button variant="primary" onClick={toggleSortOrder} style={{ 
+          marginBottom: "10px", 
+          width: "250px",
+          }}>
+
+
           Sort by Price: {isLowToHigh ? "Low to High" : "High to Low"}
         </Button>
 
-        {/* Size Slider */}
-        <Form.Group controlId="sizeSlider" style={{ marginBottom: "20px" }}>
-          <Form.Label style={{ color: "white" }}>
-            Size: {size === 7 ? "All" : `${size} inches`}
-          </Form.Label>
-
+        {/* Size Dropdown */}
+        <Form.Group controlId="sizeDropdown" style={{ marginBottom: "20px" }}>
           <Form.Control
-            type="range"
-            min="2"
-            max="7"
-            step="1"
+            as="select"
             value={size}
             onChange={handleSizeChange}
             style={{
-              width: "30%",
+              width: "250px",
               margin: "10px auto",
+              backgroundColor: "#623686",
+              borderColor: "#623686",
+              color: "white",
+              textAlign: "center",
             }}
-            className="custom-slider"
-          />
+          >
+            <option value={7}>All Sizes</option>
+            <option value={2}>2 inches</option>
+            <option value={3}>3 inches</option>
+            <option value={4}>4 inches</option>
+            <option value={5}>5 inches</option>
+            <option value={6}>6 inches</option>
+          </Form.Control>
         </Form.Group>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
@@ -88,39 +96,6 @@ function Products() {
           ))}
         </Row>
       </Container>
-
-      {/* Inline CSS Styles for Slider */}
-      <style jsx>{`
-       .custom-slider {
-          appearance: none;
-          width: 60%;
-          height: 8px;
-          background: #ddd;
-          border-radius: 5px;
-          outline: none;
-        }
-        .custom-slider:focus {
-          outline: none;
-          border-color: #623686; /* Keeps the border color the same when focused */
-        }
-
-        .custom-slider::-webkit-slider-thumb {
-          appearance: none;
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background: purple;
-          cursor: pointer;
-        }
-
-        .custom-slider::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: purple;
-          cursor: pointer;
-        }
-      `}</style>
     </Container>
   );
 }
