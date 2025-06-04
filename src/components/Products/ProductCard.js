@@ -1,17 +1,18 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-const imagePath = (index) => require(`./ProductImages/image${index + 1}.jpeg`);
+import images from "./ProductImages/ImageIndex";
 
 function ProductCard({ id, index, name, price }) {
+  const image = images[index]; // Optional fallback
+
   return (
     <Card className="project-card-view">
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Link to={`/product/${id}`}>
           <img
-            src={imagePath(index)}
+            src={image}
             className="img-fluid"
             style={{ width: "60%", height: "80%" }}
             alt={name}
